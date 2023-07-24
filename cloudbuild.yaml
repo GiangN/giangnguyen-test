@@ -11,5 +11,5 @@ artifacts:
   - repository: 'https://us-python.pkg.dev/argo-local-giangnguyen/python-test'
     paths: ['dist/*']
 options:
-  requested_verify_options: VERIFIED
+  requested_verify_option: VERIFIED
 queueTtl: '10m'
