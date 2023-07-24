@@ -5,7 +5,10 @@ steps:
   entrypoint: 'pip'
   args: ['download', 'sampleproject==2.0.0', '-v']
 - name: 'ubuntu'
-  script: 'mkdir dist\nmv -v peppercorn-0.6-py3-none-any.whl dist/peppercorn-0.42-py3-none-any.whl\nmv -v sampleproject-2.0.0-py3-none-any.whl dist/sampleproject-2.0.42-py3-none-any.whl'
+  script: |
+    mkdir dist 
+    mv -v peppercorn-0.6-py3-none-any.whl dist/peppercorn-0.42-py3-none-any.whl
+    mv -v sampleproject-2.0.0-py3-none-any.whl dist/sampleproject-2.0.42-py3-none-any.whl
 artifacts:
   python_packages: 
   - repository: 'https://us-python.pkg.dev/argo-local-giangnguyen/python-test'
