@@ -1,6 +1,12 @@
 steps:
 - name: 'ubuntu'
-  args: ['echo', 'hello world']
+  script: |
+    echo "Hello, world! The time is $(date)." > quickstart.sh
+    echo "FROM alpine" > Dockerfile
+    echo "COPY quickstart.sh /" >> Dockerfile
+    echo "CMD ["/quickstart.sh"]" >> Dockerfile
+- name: 'docker'
+  args: ['build', '-t', 'us-docker.pkg.dev/argo-local-giangnguyen/trigger-test/unique:my-tag', '.']
 - name: 'python:3.10.7-slim-bullseye'
   entrypoint: 'pip'
   args: ['download', 'sampleproject==2.0.0', '-v']
@@ -13,6 +19,7 @@ artifacts:
   python_packages: 
   - repository: 'https://us-python.pkg.dev/argo-local-giangnguyen/python-test'
     paths: ['dist/*']
+  images: ['us-docker.pkg.dev/argo-local-giangnguyen/trigger-test/unique:my-tag']
 options:
   requested_verify_option: VERIFIED
 queueTtl: '10m'
