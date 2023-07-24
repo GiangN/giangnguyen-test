@@ -16,9 +16,6 @@ steps:
     mv -v peppercorn-0.6-py3-none-any.whl dist/peppercorn-0.42-py3-none-any.whl
     mv -v sampleproject-2.0.0-py3-none-any.whl dist/sampleproject-2.0.42-py3-none-any.whl
 artifacts:
-  python_packages: 
-  - repository: 'https://us-python.pkg.dev/argo-local-giangnguyen/python-test'
-    paths: ['dist/*']
   images: ['us-docker.pkg.dev/argo-local-giangnguyen/trigger-test/unique:my-tag']
 options:
   requested_verify_option: VERIFIED
