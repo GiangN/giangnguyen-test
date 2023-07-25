@@ -6,7 +6,7 @@ steps:
     echo "COPY quickstart.sh /" >> Dockerfile
     echo "CMD ["/quickstart.sh"]" >> Dockerfile
 - name: 'docker'
-  args: ['build', '-t', 'us-docker.pkg.dev/argo-local-giangnguyen/trigger-test/unique:my-tag', '.']
+  args: ['build', '-t', 'us-docker.pkg.dev/argo-local-giangnguyen/trigger-test/unique725:my-tag', '.']
 - name: 'python:3.10.7-slim-bullseye'
   entrypoint: 'pip'
   args: ['download', 'sampleproject==2.0.0', '-v']
