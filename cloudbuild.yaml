@@ -6,12 +6,12 @@ steps:
     echo "COPY quickstart.sh /" >> Dockerfile
     echo "CMD ["/quickstart.sh"]" >> Dockerfile
 - name: 'docker'
-  args: ['build', '-t', 'us-docker.pkg.dev/argo-local-giangnguyen/trigger-test/unique-manual-728-global:my-tag', '.']
+  args: ['build', '-t', '$LOCATION-docker.pkg.dev/$PROJECT_ID/docker-prov-repo/unique-pr:my-tag', '.']
 - name: 'python:3.10.7-slim-bullseye'
   entrypoint: 'pip'
   args: ['download', 'sampleproject==2.0.0', '-v']
 artifacts:
-  images: ['us-docker.pkg.dev/argo-local-giangnguyen/trigger-test/unique-manual-728-global:my-tag']
+  images: ['$LOCATION-docker.pkg.dev/$PROJECT_ID/docker-prov-repo/unique-pr:my-tag']
 options:
   requested_verify_option: VERIFIED
 queueTtl: '10m'
