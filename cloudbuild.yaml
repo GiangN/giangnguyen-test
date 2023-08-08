@@ -1,7 +1,7 @@
 steps:
 - name: 'ubuntu'
   script: |
-    echo Hello, world! The time is Tue Aug 8 07:29:42 PM UTC 2023. > quickstart.sh
+    echo Hello, world! The time is Tue Aug 8 07:46:41 PM UTC 2023. > quickstart.sh
     echo FROM alpine > Dockerfile
     echo COPY quickstart.sh / >> Dockerfile
     echo CMD [/quickstart.sh] >> Dockerfile
